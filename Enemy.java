@@ -82,6 +82,18 @@ public class Enemy {
         }
     }
 
+    public void changeLocation(int x) {
+        if (x == 1) {
+            this.y = this.y + 1000;
+        } else if (x == 2) {
+            this.x = this.x - 1000;
+        } else if (x == 3) {
+            this.y = this.y - 1000;
+        } else if (x == 4) {
+            this.x = this.x + 1000;
+        }
+    }
+
     public void updateDamage() {
         long currentTime = System.currentTimeMillis();
         if ((character.x - 5 <= x + 35 && character.x + 55 >= x) && (character.y - 5 <= y + 35 && character.y + 55 >= y)) {

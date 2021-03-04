@@ -41,7 +41,7 @@ public class World {
 
     public void createEnemies() {
         enemies.add(new Enemy(200, 700, character));
-        enemies.add(new Enemy(-1500, -1400, character));
+        enemies.add(new Enemy(-1500, 400, character));
         enemies.add(new Enemy(400, 100, character));
     }
 
@@ -80,6 +80,10 @@ public class World {
     public void changeLocation(int x) {
         for (int i = 0; i < walls.size(); i++) {
             (walls.get(i)).changeLocation(x);
+        }
+
+        for (int i = 0; i < enemies.size(); i++) {
+            (enemies.get(i)).changeLocation(x);
         }
     }
 

@@ -104,75 +104,25 @@ public class Character {
 
     }
 
-    public void changeLocation(double x0, double y0, double xN, double yN, World walls) {
+    public void changeLocation(double x0, double y0, double xN, double yN, World world) {
         if (x < x0) {
-            walls.changeLocation(4);
+            world.changeLocation(4);
             this.x = 999;
         }
 
         if (x > xN) {
-            walls.changeLocation(2);
+            world.changeLocation(2);
             this.x = 1;
         }
 
         if (y < y0) {
-            walls.changeLocation(1);
+            world.changeLocation(1);
             this.y = 999;
         }
 
         if (y > yN) {
-            walls.changeLocation(3);
+            world.changeLocation(3);
             this.y = 1;
         }
     }
-
-
-
-    //public void update(long dt, Walls walls) {
-    //    walls.wallsMoves(dt);
-    //}
-
-    //public void open(MouseEvent e, Walls walls) {
-    //    walls.open(e);
-    //}
-
-    /*public void checkObjects(Wall wall) {
-        if (x >= wall.x && x <= wall.x + wall.width && y + height - 7 >= wall.y && y + 7 <= wall.y + wall.height) {
-            x = wall.x + wall.width;
-            wallL = true;
-            System.out.println("LLLLL");
-            //this.wallL = true;
-        }
-
-        if (x + width >= wall.x && x + width <= wall.x + wall.width && y + height - 7 >= wall.y && y + 7 <= wall.y + height) {
-            x = wall.x - 50;
-            wallR = true;
-            System.out.println("RRRRR");
-            //this.wallR = true;
-        }
-
-        if (x + width - 7 >= wall.x && x + 7 <= wall.x + wall.width && y >= wall.y && y <= wall.y + wall.height) {
-            y = wall.y + wall.height;
-            wallU = true;
-            //this.wallU = true;
-            System.out.println("UUUUU");
-        }
-
-        if (x + width - 7 >= wall.x && x + 7 <= wall.x + wall.width && y + height >= wall.y && y + height <= wall.y + wall.height) {
-            y = wall.y - 50;
-            wallD = true;
-            //this.wallD = true;
-            System.out.println("DDDDD");
-        }
-    }*/
-
-
-    //public void damage(Enemy enemy, MouseEvent e) {
-    //    if (e.getX() >= enemy.x && e.getX() <= enemy.x + 40 && e.getY() >= enemy.y && e.getY() <= enemy.y + 40) {
-    //        if ((x - 5 <= enemy.x + 35 && x + 55 >= enemy.x) && (y - 5 <= enemy.y + 35 && y + 55 >= enemy.y)) {
-    //            enemy.enemyHealth -= 10;
-    //            System.out.println("Yes");
-    //        }
-    //    }
-    //}
 }
