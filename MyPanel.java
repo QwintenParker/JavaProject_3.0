@@ -46,6 +46,8 @@ public class MyPanel extends JPanel implements MouseListener {
         long currentTime = System.currentTimeMillis();
         long dt = currentTime - previousWorldUpdateTime;
 
+        world.checkEnemyWalls();
+
         character.update(dt);
         world.updateEnemies(dt);
         character.changeLocation(x0, y0, xN, yN, world);

@@ -87,6 +87,14 @@ public class World {
         }
     }
 
+    public void checkEnemyWalls() {
+        for (int i = 0; i < walls.size(); i++) {
+            for (int j = 0; j < enemies.size() ; j++) {
+                (walls.get(i)).checkObjects(enemies.get(j));
+            }
+        }
+    }
+
     //public void drawObjects(Graphics g) {
     //    for (int i = 0; i < objects.size(); i++) {
     //        (objects.get(i)).draw(g);
@@ -113,6 +121,11 @@ public class World {
         for (double i = 1500; i <= 1875;) {
             walls.add(new Wall(i, 500, character, 25, 25));
             i = i + 25;
+        }
+
+        for (double i = -500; i >= -875;) {
+            walls.add(new Wall(i, -500, character, 25, 25));
+            i = i - 25;
         }
     }
 

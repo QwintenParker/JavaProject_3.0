@@ -50,6 +50,29 @@ public class Wall {
             }
     }
 
+    public void checkObjects(Enemy enemy) {
+
+        if (enemy.x >= this.x && enemy.x <= this.x + width && enemy.y + enemy.height - 7 >= this.y && enemy.y + 7 <= this.y + height) {
+            enemy.x = x + width;
+            enemy.xH = enemy.x + 5;
+        }
+
+        if (enemy.x + enemy.width >= this.x && enemy.x + enemy.width <= this.x + width && enemy.y + enemy.height - 7 >= this.y && enemy.y + 7 <= this.y + height) {
+            enemy.x = x - 40;
+            enemy.xH = enemy.x + 5;
+        }
+
+        if (enemy.x + enemy.width - 7 >= this.x && enemy.x + 7 <= x + width && enemy.y >= y && enemy.y <= y + height) {
+            enemy.y = y + height;
+            enemy.yH = enemy.y - 10;
+        }
+
+        if (enemy.x + enemy.width - 7 >= this.x && enemy.x + 7 <= this.x + width && enemy.y + enemy.height >= this.y && enemy.y + enemy.height <= this.y + height) {
+            enemy.y = y - 40;
+            enemy.yH = enemy.y - 10;
+        }
+    }
+
     /*public void update(long dt) {
         if (character.isMoving) {
             //x -= character.dtX;
